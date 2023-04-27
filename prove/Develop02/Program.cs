@@ -13,22 +13,22 @@ class Program
         while (continueProgram)
         {
             myMenu.Display();
-            string userChoice = myMenu.ReadUserChoice();
+            string userChoice = myMenu.GetUserChoice();
             switch (userChoice)
             {
                 case "1":
-                    string newPrompt = myPromptGenerator.RandomPrompt();
-                    string userEntry = myMenu.ReadUserContent(newPrompt);
+                    string newPrompt = myPromptGenerator.GetRandomPrompt();
+                    string userEntry = myMenu.GetUserContent(newPrompt);
                     myJournal.AddEntry(new Entry(newPrompt, userEntry));
                     break;
                 case "2":
-                    myJournal.Display();
+                    myJournal.DisplayEntries();
                     break;
                 case "3":
-                    myJournal.SaveJournal();
+                    myJournal.SaveJournalToFile();
                     break;
                 case "4":
-                    myJournal.LoadJournal();
+                    myJournal.LoadJournalFromFile();
                     break;
                 case "5":
                     continueProgram = false;
@@ -43,33 +43,33 @@ class Program
 
 class Journal
 {
-    private List<Entry> entries = new List<Entry>();
+    private List<Entry> _entries = new List<Entry>();
 
     public void AddEntry(Entry newEntry)
     {
-        entries.Add(newEntry);
+        _entries.Add(newEntry);
     }
 
-    public void Display()
+    public void DisplayEntries()
     {
-        foreach (Entry entry in entries)
+        foreach (Entry entry in _entries)
         {
             Console.WriteLine($"Date: {entry.Date}\nPrompt: {entry.Prompt}\nContent: {entry.Content}\n");
         }
     }
 
-    public void SaveJournal()
+    public void SaveJournalToFile()
     {
         Console.WriteLine("Enter the filename to save your journal to:");
-        string filename = Console.ReadLine();
-        // code to save the journal to a file using the specified filename
+        string fileName = Console.ReadLine();
+        // code to save the journal to a file using the specified fileName
     }
 
-    public void LoadJournal()
+    public void LoadJournalFromFile()
     {
         Console.WriteLine("Enter the filename to load your journal from:");
-        string filename = Console.ReadLine();
-        // code to load the journal from a file using the specified filename and replace the current entries list
+        string fileName = Console.ReadLine();
+        // code to load the journal from a file using the specified fileName and replace the current _entries list
     }
 }
 
@@ -99,13 +99,13 @@ class Menu
         Console.WriteLine("5. Quit");
     }
 
-    public string ReadUserChoice()
+    public string GetUserChoice()
     {
         Console.WriteLine("\nEnter your choice (1-5):");
         return Console.ReadLine();
     }
 
-    public string ReadUserContent(string prompt)
+    public string GetUserContent(string prompt)
     {
         Console.WriteLine($"\n{prompt}");
         return Console.ReadLine();
@@ -114,7 +114,7 @@ class Menu
 
 class PromptGenerator
 {
-    private List<string> prompts = new List<string>()
+    private List<string> _prompts = new List<string>()
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -123,9 +123,9 @@ class PromptGenerator
         "If I had one thing I could do over today, what would it be?"
     };
 
-    public string RandomPrompt()
+    public string GetRandomPrompt()
     {
         Random rand = new Random();
-        return prompts[rand.Next(prompts.Count)];
+        return _prompts[rand.Next(_prompts.Count)];
     }
 }
