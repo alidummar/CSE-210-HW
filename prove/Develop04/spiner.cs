@@ -95,10 +95,10 @@ public class Spinner
         {
             switch (counter % 4)
             {
-                case 0: Console.Write("Well done!! /"); break;
-                case 1: Console.Write("Well done!! -"); break;
-                case 2: Console.Write("Well done!! \\"); break;
-                case 3: Console.Write("Well done!! |"); break;
+                case 0: Console.Write("Fantastic! /"); break;
+                case 1: Console.Write("Fantastic! -"); break;
+                case 2: Console.Write("Fantastic! \\"); break;
+                case 3: Console.Write("Fantastic! |"); break;
             }
             Console.SetCursorPosition(Console.CursorLeft - 13, Console.CursorTop);
             counter++;

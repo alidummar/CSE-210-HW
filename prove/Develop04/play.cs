@@ -5,7 +5,7 @@ public class Activity
     // Attributes
     private string _activityName;
     private int _activityTime;
-    private string _message = "You may begin in...";
+    private string _message = "You may start in.....";
 
     // Constructors
     public Activity(string activityName, int activityTime)
@@ -15,7 +15,7 @@ public class Activity
     }
     public void GetActivityName()
     {
-        Console.WriteLine($"Welcome to the {_activityName} Activity\n");
+        Console.WriteLine($"Hello Welcome to the {_activityName} Activity\n");
     }
     public void SetActivityName(string activityName)
     {
@@ -23,7 +23,7 @@ public class Activity
     }
     public int GetActivityTime()
     {
-        Console.Write("\nHow long, in seconds, would you like for your session? ");
+        Console.Write("\nHow long, in seconds, would you like for this session? ");
         int userSeconds = Int32.Parse(Console.ReadLine());
         _activityTime = userSeconds;
         return userSeconds;
@@ -50,15 +50,15 @@ public class Activity
     }
      public void CountDown(int time)
     {
-        Console.WriteLine();  //insert blank line to start
+        Console.WriteLine();  
         for (int i = time; i > 0; i--)
         {
             Console.Write($"{_message}{i}");
             Thread.Sleep(1000);
-            string blank = new string('\b', (_message.Length + 5));  // Overwrite line
+            string blank = new string('\b', (_message.Length + 5)); 
             Console.Write(blank);
         }
-        Console.WriteLine($"Go:                                  ");  // last prompt
+        Console.WriteLine($"Go:                                  ");  
     }
 
 

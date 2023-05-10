@@ -6,24 +6,24 @@ class Program
 
     static void Main(string[] args)
     {
-        // This will clear the console
+        //clear console
         Console.Clear();
-        Console.Write("\n*** Welcome to the Mindfulness Program ****\n");
-        //Call Choices
+        Console.Write("\n*** HELLO!!! AMAZING PERSON!!! Welcome to the Mindfulness Program!!!! ****\n");
+        // this will Call Choices
         Choices choice = new Choices();
         int seconds;
 
         int action = 0;
         while (action != 4)
         {
-            // Ask for user input (1-4)
+            // aksing user input (1-4)
             action = choice.UserChoice();
             switch (action)
             {
                 case 1:
                     // Start Breathing Activity
                     Console.Clear();
-                    BreathingActivity breathing = new BreathingActivity("Breathing", 0);
+                    BreathingActivity breathing = new BreathingActivity("Breathing!", 0);
                     breathing.GetActivityName();
                     breathing.GetActivityDescription();
                     seconds = breathing.GetActivityTime();
@@ -34,7 +34,7 @@ class Program
                 case 2:
                     //Start Reflecting Activity
                     Console.Clear();
-                    ReflectingActivity reflecting = new ReflectingActivity("Reflecting", 0);
+                    ReflectingActivity reflecting = new ReflectingActivity("Reflecting!", 0);
                     reflecting.GetActivityName();
                     reflecting.GetActivityDescription();
                     seconds = reflecting.GetActivityTime();
@@ -45,7 +45,7 @@ class Program
                 case 3:
                     //Start Listing Activity
                     Console.Clear();
-                    ListingActivity listing = new ListingActivity("Listing", 0);
+                    ListingActivity listing = new ListingActivity("Listing!", 0);
                     listing.GetActivityName();
                     listing.GetActivityDescription();
                     seconds = listing.GetActivityTime();
@@ -55,10 +55,10 @@ class Program
                     break;
                 case 4:
                     // Quite
-                    Console.WriteLine("\nThank you for using the Mindfulness Program!\n");
+                    Console.WriteLine("\nThanks for for using the Mindfulness Program!\n");
                     break;
                 default:
-                    Console.WriteLine($"\nSorry the option you entered is not valid.");
+                    Console.WriteLine($"\nThe option you entered is not valid....");
                     break;
             }
         }

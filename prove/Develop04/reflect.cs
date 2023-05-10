@@ -29,7 +29,7 @@ public class ReflectingActivity : Activity
 
     private string _prompt;
     private string _question;
-    private string _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    private string _description = "Engaging in this exercise will allow you to contemplate instances in your past where you have exhibited fortitude and tenacity. By doing so, you can acknowledge the strength you possess and discover ways to apply it to other areas of your life.";
 
 
     // Constructors
@@ -58,9 +58,9 @@ public class ReflectingActivity : Activity
     {
         Console.WriteLine();  //insert blank line to start
         var prompt = GetRandomPrompt();
-        Console.WriteLine("\nConsider the following prompt:");
+        Console.WriteLine("\nPlease provide the prompt for me to consider.:");
         Console.WriteLine($"\n--- {prompt} ---");
-        Console.WriteLine($"\nWhen you have something in mind, press enter to continue.");
+        Console.WriteLine($"\nWhen you're ready to proceed, simply hit the enter key.");
 
         var input = Console.ReadKey();
         if (input.Key == ConsoleKey.Enter)
