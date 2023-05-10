@@ -5,7 +5,7 @@ public class BreathingActivity : Activity
     // Attributes 
     private string _message1 = "Please Breathe in...";
     private string _message2 = "Great! Now breathe out.....";
-    private string _description = "This activity aims to promote relaxation by guiding you through slow and intentional breathing. Try to clear your mind and concentrate on your breathing..";
+    private string _description = "This activity aims to promote relaxation by guiding you through slow and   intentional breathing. Try to clear your mind and concentrate on your breathing.";
 
     // Constructors
     // Methods
